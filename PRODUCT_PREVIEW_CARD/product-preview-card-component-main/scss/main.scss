@@ -1,0 +1,77 @@
+@import "config";
+
+// General styles
+body {
+  font-family: $ff-base;
+  font-weight: $fw-regular;
+  font-size: 0.875rem;
+  color: $neutral-medium;
+  background-color: $primary-cream;
+
+  // For the card
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  margin: 1rem;
+}
+
+.container {
+  $container-padding: 1.5rem;
+
+  background-color: $neutral-light;
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  &__right {
+    .product {
+      &__content {
+        display: grid;
+        gap: 1rem;
+        padding: $container-padding;
+      }
+
+      &__category {
+        font-size: 0.8125rem;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+      }
+
+      &__title {
+        font-size: 2rem;
+        font-family: $ff-accent;
+        color: $neutral-dark;
+      }
+
+      &__price {
+        font-size: 2rem;
+        font-family: $ff-accent;
+        color: $primary-green;
+      }
+
+      &__original-price {
+        text-decoration: line-through;
+      }
+    }
+
+    .btn-add {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: $primary-green;
+      cursor: pointer;
+      padding: 0.7em 1.5em;
+      border-radius: 5px;
+      text-decoration: none;
+      color: $neutral-light;
+
+      .cart-img {
+        width: 15px;
+        height: 15px;
+        background: url("../images/icon-cart.svg") no-repeat center right /
+          cover;
+      }
+    }
+  }
+}
+
+@import "media";

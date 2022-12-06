@@ -1,0 +1,21 @@
+.container {
+  max-width: 1100px;
+  padding: 0 60px 0 60px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.bottom-line {
+  height: 2px;
+  background: $medium-color;
+  display: block;
+  margin: 20px auto 20px auto;
+}
+
+.py-2 {
+  padding: 15px 0px 15px 0px;
+}
+
+.py-1-bt {
+  padding-bottom: 20px;
+}

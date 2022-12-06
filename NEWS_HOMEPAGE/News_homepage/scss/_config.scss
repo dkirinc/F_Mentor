@@ -1,0 +1,18 @@
+// Variables
+$website-width: 1280px;
+$main-color: hsl(35, 77%, 62%);
+$secondary-color: hsl(5, 85%, 63%);
+$light-color: hsl(36, 100%, 99%);
+$medium-color: hsl(233, 8%, 79%);
+$dark-color: hsl(236, 13%, 42%);
+$dark-color2: hsl(240, 100%, 5%);
+$bg-image: url("../img/image-web-3-desktop.jpg");
+
+// Set Text Color
+@function set-text-color($color) {
+  @if (lightness($color) > 50) {
+    @return #000;
+  } @else {
+    @return $medium-color;
+  }
+}
