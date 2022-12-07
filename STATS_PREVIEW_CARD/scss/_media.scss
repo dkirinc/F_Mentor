@@ -1,0 +1,33 @@
+@media (min-width: 600px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #preview-card {
+    display: flex;
+    flex-direction: row-reverse;
+
+    .pic-div {
+      width: 400px;
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: fill;
+      }
+    }
+
+    .preview-card {
+      &__artshow-holder {
+        width: 400px;
+      }
+
+      &__showcase-holder {
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+  }
+}

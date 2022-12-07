@@ -1,0 +1,71 @@
+@import "config";
+
+body {
+  background: $main_back;
+  font-family: $ff_one;
+  font-weight: $fw_regular;
+}
+
+#preview-card {
+  margin: 5em 1.5em 5em 1.5em;
+  border-radius: 7px;
+  overflow: hidden;
+  background: $card_back;
+
+  p {
+    color: $paragraph_main;
+  }
+
+  .preview-card {
+    &__pic-holder {
+      position: relative;
+
+      .opaque-pink {
+        background-color: rgba(170, 92, 219, 0.7);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &__article-holder {
+      padding: 2.5em 1em 2.5em 1em;
+      text-align: center;
+
+      p {
+        font-size: 0.9rem;
+        line-height: 1.7em;
+      }
+
+      .main-heading {
+        color: $heading_main;
+        font-size: 1.7rem;
+        line-height: 1.2em;
+        .coloring {
+          color: $accent;
+        }
+      }
+    }
+
+    &__showcase-holder {
+      margin-bottom: 2.5em;
+      h2 {
+        color: $heading_main;
+        text-transform: uppercase;
+      }
+      p {
+        color: $stats_headings;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        letter-spacing: 0.15em;
+      }
+      .flex-group {
+        gap: 0.05em;
+      }
+    }
+  }
+}
+
+@import "media";
