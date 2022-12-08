@@ -1,0 +1,92 @@
+@import "config";
+
+#site {
+  margin: 5em 2em 5em 2em;
+
+  .site-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    margin-bottom: 5em;
+
+    .main-heading {
+      font-weight: 200;
+
+      &-bold {
+        color: $text_colour_dark;
+      }
+    }
+
+    .text-about {
+      display: flex;
+      text-align: center;
+      p {
+        font-size: 0.9em;
+      }
+    }
+  }
+
+  .card-holder {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+
+    .card {
+      overflow: hidden;
+      border-radius: 5px;
+      box-shadow: 0 0 1em 0 rgba(20, 20, 20, 0.4);
+
+      h2 {
+        color: $text_colour_dark;
+        font-size: 1.2em;
+        font-weight: 700;
+      }
+
+      p {
+        font-size: 0.8em;
+      }
+
+      .card-content {
+        display: flex;
+        flex-direction: column;
+        margin: 1.3em;
+        gap: 1.8em;
+
+        .text-holder {
+          display: flex;
+          flex-direction: column;
+          gap: 0.4em;
+        }
+
+        .icon-holder {
+          display: flex;
+          justify-content: end;
+        }
+      }
+
+      &-1 {
+        .color-line {
+          background: $line_cyan;
+        }
+      }
+      &-2 {
+        .color-line {
+          background: $line_red;
+        }
+      }
+      &-3 {
+        .color-line {
+          background: $line_orange;
+        }
+      }
+      &-4 {
+        .color-line {
+          background: $line_blue;
+        }
+      }
+    }
+  }
+}
+
+@import "media";
