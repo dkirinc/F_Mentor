@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap");
+
+$text_primary_color: hsl(0, 0%, 100%);
+$text_footer_color: hsl(240, 2%, 79%);
+$body_background_color: hsl(207, 13%, 34%);
+$footer_background_color: hsl(240, 10%, 16%);
+
+$CTA_text: hsl(356, 100%, 66%);
+$CTA_hover: hsl(355, 100%, 74%);
+$headings_blue: hsl(208, 49%, 24%);
+
+$gradient_verylight_red: hsl(13, 100%, 72%);
+$gradient_light_red: hsl(353, 100%, 62%);
+
+$gradient_body_verydark_blue: hsl(237, 17%, 21%);
+$gradient_body_darksaturated_blue: hsl(237, 23%, 32%);
+
+.container {
+  max-width: 1200px;
+}
+
+h1 {
+  // font-size: 4em;
+  font-size: 2em;
+}
+
+p {
+  font-size: 1.2em;
+}
+
+a {
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+li {
+  font-size: 1.3em;
+  font-weight: 500;
+  color: $text_primary_color;
+
+  a {
+    font-size: 1em;
+    color: $footer_background_color;
+    color: $text_primary_color;
+    font-weight: 500;
+  }
+}
+
+.button {
+  width: 150px;
+  border-radius: 100px;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $text_primary_color;
+  font-weight: 200;
+
+  &-fill {
+    color: $CTA_text;
+    background-color: $text_primary_color;
+    // flex: 1 1 auto;
+    &:hover {
+      background-color: $CTA_hover;
+      color: $text_primary_color;
+    }
+  }
+  &-fill-reverse {
+    color: $text_primary_color;
+    background-color: $CTA_text;
+    flex: 1 1 auto;
+    width: 10rem;
+    height: 3rem;
+    ::after {
+      content: "";
+      display: block;
+      height: 30px;
+      width: 30px;
+    }
+  }
+
+  &-transparent {
+    color: $text_primary_color;
+    border: 1px solid $text_primary_color;
+    &:hover {
+      background: $text_primary_color;
+      color: $CTA_text;
+    }
+  }
+  &-transparent-login {
+    color: $footer_background_color;
+    border: 1px solid $text_primary_color;
+    flex: 1 1 auto;
+    width: 10rem;
+    height: 4rem;
+
+    &:hover {
+      background: $text_primary_color;
+    }
+  }
+}
+
+.bottom-line {
+  height: 1px;
+  background: $text_footer_color;
+  display: block;
+  width: 100%;
+
+  // margin: 1px auto 1px auto;
+}
+
+.company-logo {
+  h2 {
+    font-size: 2.2em;
+    font-weight: 500;
+  }
+}
+
+.arrow {
+  display: inline-block;
+  background: url("/dist/images/icon-arrow-light.svg") no-repeat center/cover;
+  width: 15px;
+  height: 15px;
+  margin-left: 0.8rem;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+}

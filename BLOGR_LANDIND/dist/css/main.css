@@ -1,0 +1,640 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0; }
+
+/*
+    3. Allow percentage-based heights in the application
+  */
+html,
+body {
+  height: 100%;
+  font-family: "Ubuntu", sans-serif; }
+
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased; }
+
+/*
+    6. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%; }
+
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit; }
+
+/*
+    8. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word; }
+
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate; }
+
+a {
+  text-decoration: none; }
+
+ul,
+li {
+  padding: 0;
+  list-style-type: none; }
+
+.container {
+  max-width: 1200px; }
+
+h1 {
+  font-size: 2em; }
+
+p {
+  font-size: 1.2em; }
+
+a {
+  font-size: 1.2em;
+  font-weight: 700; }
+
+li {
+  font-size: 1.3em;
+  font-weight: 500;
+  color: white; }
+  li a {
+    font-size: 1em;
+    color: #25252d;
+    color: white;
+    font-weight: 500; }
+
+.button {
+  width: 150px;
+  border-radius: 100px;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 200; }
+  .button-fill {
+    color: #ff525d;
+    background-color: white; }
+    .button-fill:hover {
+      background-color: #ff7a85;
+      color: white; }
+  .button-fill-reverse {
+    color: white;
+    background-color: #ff525d;
+    flex: 1 1 auto;
+    width: 10rem;
+    height: 3rem; }
+    .button-fill-reverse ::after {
+      content: "";
+      display: block;
+      height: 30px;
+      width: 30px; }
+  .button-transparent {
+    color: white;
+    border: 1px solid white; }
+    .button-transparent:hover {
+      background: white;
+      color: #ff525d; }
+  .button-transparent-login {
+    color: #25252d;
+    border: 1px solid white;
+    flex: 1 1 auto;
+    width: 10rem;
+    height: 4rem; }
+    .button-transparent-login:hover {
+      background: white; }
+
+.bottom-line {
+  height: 1px;
+  background: #c8c8cb;
+  display: block;
+  width: 100%; }
+
+.company-logo h2 {
+  font-size: 2.2em;
+  font-weight: 500; }
+
+.arrow {
+  display: inline-block;
+  background: url("/dist/images/icon-arrow-light.svg") no-repeat center/cover;
+  width: 15px;
+  height: 15px;
+  margin-left: 0.8rem; }
+
+.menu-wrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1; }
+
+.menu-wrap .toggler {
+  position: absolute;
+  top: 3rem;
+  right: 1rem;
+  z-index: 2;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  opacity: 0; }
+
+.menu-wrap .hamburger {
+  position: absolute;
+  top: 3rem;
+  right: 1rem;
+  z-index: 1;
+  width: 60px;
+  height: 60px;
+  padding: 1rem;
+  background: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease; }
+
+/* Hamburger line */
+.menu-wrap .hamburger > div {
+  position: relative;
+  flex: none;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease; }
+
+/* Hamburger top and bottom lines */
+.menu-wrap .hamburger > div::before,
+.menu-wrap .hamburger > div::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: -10px;
+  width: 100%;
+  height: 2px;
+  background: inherit; }
+
+.menu-wrap .hamburger > div::after {
+  top: 10px; }
+
+/* Toggler animation */
+.menu-wrap .toggler:checked + .hamburger > div {
+  transform: rotate(135deg); }
+
+/* Turns lines into X */
+.menu-wrap .toggler:checked + .hamburger > div::before,
+.menu-wrap .toggler:checked + .hamburger > div::after {
+  top: 0;
+  rotate: 90deg; }
+
+/* Rotate on hover */
+.menu-wrap .toggler:checked:hover + .hamburger > div {
+  transform: rotate(225deg); }
+
+/* Show menu */
+.menu-wrap .toggler:checked ~ .menu-mobile {
+  visibility: visible; }
+
+.menu-wrap .toggler:checked ~ .menu-mobile > div {
+  transform: scale(1);
+  transition: var(--menu-speed); }
+
+.menu-wrap .toggler:checked ~ .menu-mobile > div > div {
+  opacity: 1;
+  transition: opacity 0.4s ease 0.4s; }
+
+.menu-wrap .menu-mobile {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  visibility: hidden;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10rem 2rem 2rem 2rem; }
+  .menu-wrap .menu-mobile .arrow {
+    height: 15px;
+    width: 15px;
+    background: url(../images/icon-arrow-dark.svg) center center/cover no-repeat;
+    background-size: contain; }
+    .menu-wrap .menu-mobile .arrow-mobile {
+      display: inline-block; }
+  .menu-wrap .menu-mobile li {
+    color: #4b5862; }
+  .menu-wrap .menu-mobile .site-menu-secondary-item {
+    display: none; }
+  .menu-wrap .menu-mobile > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: white;
+    height: 100%;
+    padding: 0 2em 2em 2em;
+    box-shadow: 0px 25px 56px -24px rgba(0, 0, 0, 0.75);
+    margin: 1em;
+    gap: 0.5em; }
+    .menu-wrap .menu-mobile > div > ul {
+      text-align: center; }
+      .menu-wrap .menu-mobile > div > ul > li {
+        padding: 1rem; }
+        .menu-wrap .menu-mobile > div > ul > li > div {
+          transition: all 0.1s ease-in; }
+        .menu-wrap .menu-mobile > div > ul > li:hover > div {
+          rotate: 180deg; }
+        .menu-wrap .menu-mobile > div > ul > li:hover ul {
+          background: #c8c8cb;
+          color: #4b5862;
+          display: block;
+          flex-direction: column;
+          gap: 1em;
+          padding: 1em;
+          width: 100%;
+          position: relative;
+          margin-top: 1rem; }
+          .menu-wrap .menu-mobile > div > ul > li:hover ul li a {
+            font-size: 1.5rem;
+            font-weight: 200; }
+  .menu-wrap .menu-mobile .mobile-menu-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+
+header {
+  overflow: hidden;
+  background: linear-gradient(to left, #ff3d54, #ff8f70);
+  color: white;
+  border-radius: 0 0 0 100px;
+  display: flex; }
+
+.hero {
+  overflow: hidden;
+  height: 90vh;
+  width: 100vw;
+  background: url("/dist/images/bg-pattern-intro-mobile.svg") no-repeat center/cover;
+  background-size: 400%;
+  background-position: center;
+  padding: 3rem 2rem 3rem 2rem;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .hero-content {
+    height: 100%;
+    width: 100%;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column; }
+  .hero nav {
+    display: flex;
+    justify-content: space-between; }
+    .hero nav .nav-left {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem; }
+      .hero nav .nav-left ul {
+        list-style: none;
+        display: flex;
+        font-weight: 200;
+        display: none; }
+        .hero nav .nav-left ul .menu-theme {
+          padding: 1rem;
+          position: relative;
+          font-weight: 200; }
+          .hero nav .nav-left ul .menu-theme:hover {
+            text-decoration: underline;
+            cursor: pointer; }
+        .hero nav .nav-left ul li ul {
+          background-color: white;
+          display: none; }
+          .hero nav .nav-left ul li ul a {
+            color: #25252d;
+            font-size: 1rem;
+            font-weight: 200; }
+            .hero nav .nav-left ul li ul a:hover {
+              font-weight: 500;
+              text-decoration: none; }
+        .hero nav .nav-left ul li > div {
+          transition: all 0.1s ease-in; }
+        .hero nav .nav-left ul li:hover > div {
+          transform: rotate(180deg); }
+        .hero nav .nav-left ul li:hover ul {
+          display: block;
+          position: absolute;
+          left: 0;
+          width: 200px;
+          margin-top: 1rem;
+          padding: 1rem; }
+        .hero nav .nav-left ul .arrow {
+          align-self: center;
+          margin-right: 2rem; }
+      .hero nav .nav-left .site-menu {
+        display: none; }
+    .hero nav .nav-right {
+      display: none; }
+  .hero .header-info {
+    padding: 1em;
+    flex-grow: 1;
+    align-self: center;
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center; }
+    .hero .header-info h1 {
+      font-weight: 400; }
+    .hero .header-info p {
+      font-family: "Overpass";
+      font-weight: 300; }
+    .hero .header-info .header-buttons {
+      margin-top: 2em;
+      height: 3em;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      gap: 1em;
+      width: 100%; }
+
+#showcase {
+  overflow: hidden; }
+  #showcase h2 {
+    color: #1f3f5b; }
+  #showcase .showcase-content {
+    margin-top: 4rem;
+    align-self: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden; }
+    #showcase .showcase-content .content-middle-container {
+      display: grid; }
+      #showcase .showcase-content .content-middle-container .content-4 {
+        grid-row: 1/3; }
+      #showcase .showcase-content .content-middle-container .content-5 {
+        grid-row: 2/4; }
+    #showcase .showcase-content .content {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem; }
+      #showcase .showcase-content .content-1 {
+        grid-row: 1;
+        gap: 3rem; }
+      #showcase .showcase-content .content-1-2 {
+        grid-row: 2;
+        gap: 3rem; }
+      #showcase .showcase-content .content-2 {
+        grid-row: 3; }
+      #showcase .showcase-content .content-3 {
+        grid-row: 4; }
+      #showcase .showcase-content .content-4 {
+        grid-row: 5/7;
+        grid-column: 1;
+        z-index: 2;
+        margin-top: 4rem; }
+      #showcase .showcase-content .content-5 {
+        grid-row: 6/8;
+        grid-column: 1;
+        z-index: 1;
+        padding: 0; }
+      #showcase .showcase-content .content-6 {
+        grid-row: 8; }
+      #showcase .showcase-content .content-7 {
+        grid-row: 9; }
+      #showcase .showcase-content .content-8 {
+        grid-row: 10;
+        margin-bottom: 3rem; }
+    #showcase .showcase-content .graphic {
+      height: 300px;
+      width: 300px; }
+      #showcase .showcase-content .graphic-editor {
+        background: url(../images/illustration-editor-mobile.svg) center center/cover; }
+      #showcase .showcase-content .graphic-mobile {
+        background: url(../images/illustration-phones.svg) center center/cover;
+        position: relative;
+        bottom: 5rem; }
+      #showcase .showcase-content .graphic-pc {
+        background: url(../images/illustration-laptop-mobile.svg) center center/cover; }
+    #showcase .showcase-content .background-showcase-holder {
+      overflow: hidden;
+      background-color: #2c2d3f;
+      color: white;
+      border-radius: 0 3em 0 3em;
+      width: 100%; }
+      #showcase .showcase-content .background-showcase-holder .graphic-pattern-circle {
+        background: url(../images/bg-pattern-circles.svg) no-repeat top;
+        background-size: 150%;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 0 2rem 100px 2rem;
+        margin-top: 10rem; }
+
+footer .footer-container {
+  overflow: hidden;
+  background: #25252d;
+  color: white;
+  border-radius: 0 100px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem; }
+  footer .footer-container li,
+  footer .footer-container a {
+    font-size: 1rem;
+    font-weight: 200; }
+  footer .footer-container a {
+    color: #c8c8cb; }
+    footer .footer-container a:hover {
+      text-decoration: underline;
+      cursor: pointer; }
+  footer .footer-container .footer-grid-element {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem; }
+  footer .footer-container :first-child {
+    margin-top: 1rem; }
+  footer .footer-container :last-child {
+    margin-bottom: 1rem; }
+  footer .footer-container .site-menu-secondary-item {
+    text-align: center; }
+
+@media (min-width: 1100px) {
+  .hero {
+    background-size: 200%;
+    background-position: 20%; }
+    .hero nav .nav-left ul {
+      display: flex; }
+    .hero nav .nav-right {
+      display: flex;
+      align-items: center; }
+      .hero nav .nav-right .header-buttons {
+        display: flex;
+        align-items: center;
+        text-decoration: none; }
+        .hero nav .nav-right .header-buttons a {
+          text-decoration: none; }
+    .hero .header-info h1 {
+      font-size: 4rem; }
+  .menu-wrap {
+    display: none; }
+  #showcase .showcase-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    margin-bottom: 5rem;
+    margin-top: 5rem;
+    position: relative; }
+    #showcase .showcase-content .content-upper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10rem 0 10rem 0; }
+      #showcase .showcase-content .content-upper-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); }
+        #showcase .showcase-content .content-upper-container .content-1 {
+          grid-column: 1/3; }
+          #showcase .showcase-content .content-upper-container .content-1 h2 {
+            font-size: 2rem; }
+        #showcase .showcase-content .content-upper-container .content-1-2 {
+          grid-row: 1/4;
+          grid-column: 2;
+          z-index: 2;
+          justify-content: center;
+          align-items: flex-end; }
+        #showcase .showcase-content .content-upper-container .content-2 {
+          grid-row: 2;
+          grid-column: 1;
+          text-align: left; }
+          #showcase .showcase-content .content-upper-container .content-2 h2 {
+            align-self: flex-start; }
+        #showcase .showcase-content .content-upper-container .content-3 {
+          grid-row: 3;
+          grid-column: 1;
+          text-align: left; }
+          #showcase .showcase-content .content-upper-container .content-3 h2 {
+            align-self: flex-start; }
+    #showcase .showcase-content .content-middle {
+      width: 100%; }
+      #showcase .showcase-content .content-middle .content {
+        text-align: start; }
+    #showcase .showcase-content .content-middle-container {
+      grid-template-columns: repeat(2, 1fr); }
+      #showcase .showcase-content .content-middle-container .content-4 {
+        grid-row: 1;
+        grid-column: 1/2; }
+      #showcase .showcase-content .content-middle-container .content-5 {
+        grid-row: 1;
+        grid-column: 1/3; }
+    #showcase .showcase-content .content-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 10rem 0 10rem 0; }
+      #showcase .showcase-content .content-bottom-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); }
+        #showcase .showcase-content .content-bottom-container .content-6 {
+          grid-row: 1/3;
+          grid-column: 1;
+          justify-content: center;
+          align-items: flex-start; }
+        #showcase .showcase-content .content-bottom-container .content-7 {
+          grid-row: 1/2;
+          grid-column: 2;
+          z-index: 2;
+          text-align: left; }
+        #showcase .showcase-content .content-bottom-container .content-8 {
+          grid-row: 2/3;
+          grid-column: 2;
+          text-align: left; }
+        #showcase .showcase-content .content-bottom-container .content h2 {
+          align-self: flex-start; }
+    #showcase .showcase-content .graphic-editor {
+      overflow: hidden;
+      position: absolute;
+      width: 900px;
+      height: 900px;
+      background: url(../images/illustration-editor-desktop.svg) center no-repeat;
+      background-size: 100%;
+      z-index: 2;
+      right: -300px; }
+    #showcase .showcase-content .graphic-mobile {
+      bottom: 50px;
+      width: 400px;
+      height: 400px;
+      background-size: 100%; }
+    #showcase .showcase-content .graphic-pc {
+      position: absolute;
+      width: 900px;
+      height: 900px;
+      background: url(../images/illustration-laptop-desktop.svg) center no-repeat;
+      background-size: 100%;
+      z-index: 2;
+      left: -350px; }
+    #showcase .showcase-content .background-showcase-holder {
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      #showcase .showcase-content .background-showcase-holder .graphic-pattern-circle {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); }
+        #showcase .showcase-content .background-showcase-holder .graphic-pattern-circle h1 {
+          grid-row: 1;
+          grid-column: 2; }
+        #showcase .showcase-content .background-showcase-holder .graphic-pattern-circle p {
+          grid-row: 2;
+          grid-column: 2; }
+  footer .footer-container {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding: 2rem 0 2rem 0; }
+    footer .footer-container .footer-grid-element {
+      align-self: flex-start;
+      position: relative;
+      gap: 1.5rem; }
+      footer .footer-container .footer-grid-element .company-logo {
+        position: absolute;
+        top: -2.5rem; } }

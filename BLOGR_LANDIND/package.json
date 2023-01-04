@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "node-sass": "^8.0.0"
+  },
+  "name": "blogr_landind",
+  "description": "![Design preview for the Blogr landing page coding challenge](./design/desktop-preview.jpg)",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
