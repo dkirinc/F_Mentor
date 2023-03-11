@@ -1,0 +1,126 @@
+@import "utilities";
+
+@media (min-width: 1100px) {
+  .container {
+    max-width: 700px;
+  }
+
+  .container-small {
+    max-width: 500px;
+  }
+
+  .container-icons {
+    max-width: 1000px;
+  }
+
+  .button-holder {
+    flex-direction: row;
+  }
+
+  header {
+    background: url("/dist/images/bg-header-desktop.png") no-repeat center/cover;
+  }
+
+  #body-content {
+    .image-text-holder {
+      // display: grid;
+      // grid-template-columns: repeat(5, 1fr);
+      flex-direction: row;
+      align-items: stretch;
+      gap: 0rem;
+      width: 100vw;
+
+      .image-pc {
+        // width: 100%;
+        // grid-column: 1/4;
+        flex-grow: 1;
+        flex-basis: 0;
+        width: 100%;
+        height: 100%;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+        // width: 100%;
+        // height: 100%;
+      }
+
+      .text-showcase {
+        // grid-column: 4/6;
+        flex-grow: 1;
+        flex-basis: 0;
+        text-align: start;
+        justify-content: center;
+
+        .text-showcase-content {
+          padding-left: 10rem;
+        }
+      }
+    }
+
+    .image-tablet {
+      width: 600px;
+      height: 350px;
+    }
+
+    .icon-text-holder {
+      display: flex;
+
+      .icon-text {
+        flex-grow: 1;
+        flex-basis: 0;
+      }
+    }
+
+    .company-logo-holder {
+      flex-direction: row;
+    }
+
+    .main-text-holder-bottom {
+      margin-top: 4rem;
+
+      .button-holder {
+        align-self: center;
+      }
+    }
+  }
+
+  footer {
+    flex-direction: row;
+    justify-content: center;
+
+    #footer-content {
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-between;
+      margin: 3rem 0 3rem 0;
+
+      .footer-box-1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: start;
+        gap: 3rem;
+
+        .footer-link-holder {
+          align-items: start;
+          justify-content: flex-start;
+
+          .empty-link {
+            height: 1.8rem;
+          }
+        }
+      }
+
+      .logo-footer {
+        margin-bottom: 0;
+      }
+    }
+
+    .social-media-holder {
+      justify-self: flex-end;
+    }
+  }
+}
