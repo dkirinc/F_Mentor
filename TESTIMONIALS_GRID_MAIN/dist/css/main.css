@@ -163,6 +163,9 @@ h3 {
     #testimonials .grid_testimonials .testimonial_card .testimonial_holder .testimonial_holder_image_dark {
       border: 2px solid #7541c8; }
 
+body {
+  display: block !important; }
+
 #testimonials {
   margin: 4rem 1.5rem 3rem 1.5rem;
   display: flex !important;
@@ -198,6 +201,10 @@ h3 {
         z-index: -1; }
 
 @media (min-width: 1150px) {
+  body {
+    display: flex !important;
+    align-items: center;
+    justify-content: center; }
   #testimonials {
     align-self: center;
     justify-self: center; }

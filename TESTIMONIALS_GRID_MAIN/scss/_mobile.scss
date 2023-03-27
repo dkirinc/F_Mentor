@@ -1,4 +1,9 @@
 @media (min-width: 1150px) {
+  body {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
   #testimonials {
     align-self: center;
     justify-self: center;

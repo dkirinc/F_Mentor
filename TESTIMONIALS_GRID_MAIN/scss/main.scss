@@ -1,6 +1,10 @@
 @import "reset";
 @import "utilities";
 
+body {
+  display: block !important;
+}
+
 #testimonials {
   margin: 4rem 1.5rem 3rem 1.5rem;
 
