@@ -1,5 +1,7 @@
 @media (min-width: 1150px) {
   #testimonials {
+    align-self: center;
+    justify-self: center;
     .grid_testimonials {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -42,6 +44,7 @@
 
   .container {
     max-width: 1100px;
-    margin-bottom: 4rem;
+    align-self: center;
+    // margin-bottom: 4rem;
   }
 }
