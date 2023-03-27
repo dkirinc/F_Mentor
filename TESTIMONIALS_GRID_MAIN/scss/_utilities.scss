@@ -1,0 +1,90 @@
+$color_card_violet: hsl(263, 55%, 52%);
+$color_card_grayish_blue: hsl(217, 19%, 35%);
+$color_card_blackish_blue: hsl(219, 29%, 14%);
+$color_card_white: hsl(0, 0%, 100%);
+
+$color_neutral_light_gray: hsl(0, 0%, 81%);
+$color_neutral_grayish_blue: hsl(210, 46%, 95%);
+
+$size-step-0: 13px;
+$size-step-1: 13px;
+$size-step-2: 13px;
+$size-step-3: 18px;
+$size-step-4: 2.43rem;
+
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: $size-step-0;
+}
+
+h1 {
+  font-size: $size-step-4;
+}
+
+h2 {
+  font-size: $size-step-3;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: $size-step-2;
+}
+
+#testimonials {
+  .grid_testimonials {
+    .testimonial_card {
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      &:nth-child(1) {
+        background-color: $color_card_violet;
+        color: $color_neutral_grayish_blue;
+      }
+      &:nth-child(2) {
+        background-color: $color_card_grayish_blue;
+        color: set-text-color($color_card_grayish_blue);
+      }
+      &:nth-child(3) {
+        background-color: $color_card_white;
+        color: set-text-color($color_card_white);
+      }
+      &:nth-child(4) {
+        background-color: $color_card_blackish_blue;
+        color: set-text-color($color_card_blackish_blue);
+      }
+      &:nth-child(5) {
+        background-color: $color_card_white;
+        color: set-text-color($color_card_white);
+        margin-bottom: 4rem;
+      }
+
+      .testimonial_holder {
+        .testimonial_holder_image {
+          width: 1.8rem;
+          height: 1.8rem;
+          border-radius: 50%;
+          border: 2px solid $color_neutral_light_gray;
+
+          &_dark {
+            border: 2px solid $color_card_violet;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Set Text Color
+@function set-text-color($color) {
+  @if (lightness($color) > 50) {
+    @return $color_card_grayish_blue;
+  } @else {
+    @return $color_neutral_grayish_blue;
+  }
+}
