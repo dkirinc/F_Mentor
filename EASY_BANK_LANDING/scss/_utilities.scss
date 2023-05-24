@@ -1,0 +1,99 @@
+@import "reset";
+
+// Primary
+$dark_blue: hsl(233, 26%, 24%);
+$lime_green: hsl(136, 65%, 51%);
+$bright_cyan: hsl(192, 70%, 51%);
+
+// Neutral
+$grayish_blue: hsl(233, 8%, 62%);
+$light_grayish_blue: hsl(220, 16%, 96%);
+$very_light_gray: hsl(0, 0%, 98%);
+$white: hsl(0, 0%, 100%);
+
+// Gap
+$testimonial_spacing: 1.5rem;
+
+// Font
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap");
+
+body {
+  height: 100%;
+  font-family: "Public Sans", sans-serif;
+}
+
+.container {
+  padding: 0 1.5rem 0 1.5rem;
+  max-width: 400px;
+}
+
+.container_testimonial {
+  padding: 0 1.5rem 0 1.5rem;
+  max-width: 400px;
+}
+
+.container-desktop {
+  max-width: 1000px;
+}
+
+// Text sizes
+h1 {
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 1.2;
+}
+h2 {
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 1.2;
+}
+h3 {
+  font-size: 20px;
+  font-weight: 400;
+}
+h4 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+p {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: $grayish_blue;
+}
+
+// Button
+.btn_invite {
+  background: $bright_cyan;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+  padding: 1.4rem 2rem 1.4rem 2rem;
+  border-radius: 2rem;
+  color: $white;
+  font-size: 15px;
+  font-weight: 300;
+  background-image: linear-gradient(to right, $lime_green, $bright_cyan);
+
+  &:hover {
+    cursor: pointer;
+    opacity: 80%;
+  }
+}
+
+.btn_and_lowerline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  p {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    &:hover {
+      cursor: pointer;
+      border-bottom: #28a745 2px solid;
+    }
+  }
+}

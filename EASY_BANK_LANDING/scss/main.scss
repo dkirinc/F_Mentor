@@ -1,0 +1,263 @@
+@import "utilities";
+@import "menu";
+
+header {
+  background: $white;
+  height: 5rem;
+  width: 100vw;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+
+  .header_holder {
+    background: $white;
+    height: 4rem;
+    width: 100vw;
+    position: absolute;
+    display: flex;
+    align-items: center;
+  }
+
+  .logo_holder {
+    margin-left: 1.5rem;
+  }
+
+  .header_desktop_buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    display: none;
+  }
+
+  .btn_invite {
+    display: none;
+  }
+}
+
+// Section hero
+
+#section_hero {
+  background: $very_light_gray;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .hero_holder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 4rem;
+
+    .hero_right {
+      position: absolute;
+      width: 100%;
+      height: 55rem;
+
+      // overflow: hidden;
+      .img_ {
+        &intro {
+          position: relative;
+          width: 100%;
+          height: 35.5rem;
+        }
+        &mobiles {
+          position: relative;
+          align-self: center;
+          width: 50rem;
+          top: -41.5rem;
+          height: 37rem;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+
+    .hero_left {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin-top: 25rem;
+      align-items: center;
+      justify-content: center;
+
+      h1 {
+        text-align: center;
+      }
+
+      p {
+        text-align: center;
+      }
+    }
+  }
+}
+
+// Section testimonials
+#section_testimonials {
+  background: $light_grayish_blue;
+  // margin-top: 4rem;
+  padding: 4rem 0 4rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 6rem;
+
+  .testimonials_ {
+    &upper {
+      // margin-top: 4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+
+      h2 {
+        text-align: center;
+      }
+      p {
+        text-align: center;
+      }
+    }
+
+    &lower {
+      margin-top: 4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: $testimonial_spacing;
+    }
+  }
+}
+
+// Testimonial
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $testimonial_spacing;
+  text-align: center;
+}
+
+// Section articles
+#section_articles {
+  background: $very_light_gray;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  gap: 2rem;
+  padding: 6rem 0 6rem 0;
+  text-align: center;
+
+  .articles_holder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .articles_pages {
+    display: flex;
+    flex-direction: column;
+    gap: $testimonial_spacing;
+  }
+}
+
+// Article
+.article {
+  overflow: hidden;
+  background: $white;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  gap: 0.5rem;
+  border-radius: 0.3rem;
+
+  img {
+    height: 12.5rem;
+  }
+
+  &_text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.5rem 2rem 2.5rem 2rem;
+
+    .author {
+      font-size: 10px;
+      font-weight: 400;
+    }
+
+    p {
+      font-size: 12px;
+      font-weight: 400;
+    }
+  }
+}
+
+// Footer
+footer {
+  background: $dark_blue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding-bottom: 3rem;
+
+  .footer_holder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    .footer_content_divider_1 {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+
+  .logo_and_icons_holder {
+    margin: 2rem 0 0 0;
+    .logo_holder {
+      height: 4rem;
+    }
+
+    .icons_holder {
+      height: 1.5rem;
+      display: flex;
+      gap: 1rem;
+    }
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+
+    p {
+      color: $light_grayish_blue;
+      font-size: 15px;
+    }
+
+    .links_holder_ {
+      $links_gap: 0.5rem;
+      &1 {
+        display: flex;
+        flex-direction: column;
+        gap: $links_gap;
+        text-align: center;
+      }
+      &2 {
+        display: flex;
+        flex-direction: column;
+        gap: $links_gap;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@import "media";
