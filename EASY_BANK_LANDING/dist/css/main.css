@@ -505,7 +505,7 @@ footer {
         grid-column: 2;
         grid-row: 1; }
         #section_hero .hero_holder .hero_right .img_intro {
-          content: url("./images/bg-intro-desktop.svg");
+          content: url("images/bg-intro-desktop.svg");
           position: absolute;
           width: 100rem;
           height: 1200px;
@@ -513,7 +513,7 @@ footer {
           transform: translateY(-30%);
           max-width: none; }
         #section_hero .hero_holder .hero_right .img_mobiles {
-          content: url("./images/image-mockups.png");
+          content: url("images/image-mockups.png");
           position: absolute;
           top: -17rem;
           transform: translateX(50);
